@@ -1,12 +1,14 @@
 * {
     text-align: center;
+    /* position: relative; */
 }
 
 #main-content {
-    min-height: 1vh;
+    /* height: 90vh; */
 }
 
 #slides-c {
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,4 +44,33 @@
     transition: 1.5s;
     width: 20%;
     border-radius: 50%;
+}
+
+#social-links {
+    
+}
+#social-links ul{
+    width: 100px;
+    position: absolute;
+    list-style-type: none;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.social {
+    padding: 10px;
+    color: rgb(255, 0, 0);
+}
+
+
+.fa-brands {
+    color: #000;
+    width: 50;
+    transition: 0.3s;
+    font-size: 30px;
+}
+
+.social:hover .fa-brands {
+    transform: translateX(10px) scale(1.5);
 }
