@@ -1,3 +1,45 @@
-*{
+* {
     text-align: center;
+}
+
+#main-content {
+    min-height: 1vh;
+}
+
+#slides-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#col1,
+#col2 {
+    overflow: hidden;
+}
+
+#col-left,
+#col-right {
+    transition: 1.5s ease;
+    object-fit: cover;
+}
+
+#col-left {
+    transform: translateX(100%);
+}
+
+#col-left p {
+    text-align: left;
+    justify-content: left;
+    align-items: flex-start;
+    font-size: 30px;
+}
+
+#col-right {
+    transform: translateX(-100%);
+}
+
+#main-img {
+    transition: 1.5s;
+    width: 20%;
+    border-radius: 50%;
 }
