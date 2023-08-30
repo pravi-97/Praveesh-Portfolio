@@ -1,97 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./logo-crop.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Praveesh P</title>
-    <link rel="icon" href="./images/logo-crop.png" type="image/x-icon">
-    <link rel="stylesheet" href="style/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
-    <script src="script/script.js"></script>
-    <script src="https://kit.fontawesome.com/ea9f2aa2d6.js" crossorigin="anonymous"></script>
-</head>
-
-<body onload="doStuff();">
-    <header>
-        <nav class="navbar navbar-expand-lg "> <!--bg-body-tertiary-->
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Praveesh</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- <div class="collapse navbar-collapse" id="navbarNav"></div> -->
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Resume</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main id="main-content">
-        <div class="container text-center">
-            <div class="row" id="slides-c">
-                <div class="col-md-6" id="col1" style="background-color: rgba(82, 60, 60, 0);">
-                    <div id="col-left">
-                        <p id="main-heading">Hello There! I'm Praveesh.</p>
-                        <p id="main-body">I'm a developer with a delightful 2 years of experience with with Infosys. My main focus revolves around Java
-                        applications, but in my moments of leisure, I enjoy diving into the realms of React.</p>
-                    </div>
-                </div>
-                <div class="col-md-6" id="col2" style="background-color: rgba(0, 0, 255, 0);">
-                    <div id="col-right">
-                        <img class="img-fluid" id="main-img" src="./images/praveesh.jpg" alt="...">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <section id="social-links">
-        <div class="svg-btn text-center">
-            <ul>
-                <li class="social"><a href="https://www.linkedin.com/in/praveesh-p" target="_blank"
-                        rel="noopener noreferrer">
-                        <i class="fa-brands fa-linkedin icon-large"></i>
-                    </a></li>
-                <li class="social"><a href="https://www.facebook.com/pravi894" target="_blank"
-                        rel="noopener noreferrer">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a></li>
-                <li class="social"><a href="https://twitter.com/pravi894" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-square-x-twitter"></i>
-                    </a></li>
-                <li class="social"><a href="https://www.instagram.com/pravi894" target="_blank"
-                        rel="noopener noreferrer">
-                        <i class="fa-brands fa-square-instagram"></i>
-                    </a></li>
-            </ul>
-        </div>
-    </section>
-    <footer>
-
-    </footer>
-
-</body>
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <!-- <script src="script/script.js"></script> -->
+        <script src="https://kit.fontawesome.com/ea9f2aa2d6.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
