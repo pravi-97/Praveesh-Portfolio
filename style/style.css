@@ -23,7 +23,7 @@
 
 #col-left,
 #col-right {
-    transition: 1.5s ease;
+    transition: 2s ease;
     object-fit: cover;
 }
 
@@ -39,15 +39,25 @@
     text-align: left;
     justify-content: left;
     align-items: flex-start;
-    font-size: 30px;
+    /* font-size: 30px; */
+    overflow: hidden;
 }
 
 #main-img {
-    transition: 1.5s;
+    transition: 2s;
     width: 20%;
     border-radius: 50%;
 }
-
+#main-heading{
+    font-size: 1.9em;
+} 
+#main-body{
+    font-size: 1.1em;
+    /* visibility: hidden; */
+    /* transform: translateX(-110%); */
+    transform: translateY(120%);
+    transition: 1.5s;
+}
 #social-links {
     width: 100px;
     position: absolute;
@@ -67,8 +77,6 @@
 
 .social {
     padding: 10px;
-    /* transition: 5s; */
-    visibility: hidden;
 }
 
 .fa-brands {

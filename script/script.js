@@ -6,14 +6,16 @@ function doStuff() {
     colRight.style.transform = "translateX(0%)";
     mainImg.style.width = "60%"
     setTimeout(runSocial,2000)
+    
 }
 
 function runSocial(){
     var socialLinks = document.getElementById("social-links")
     socialLinks.style.transform = "translate(-50%, -50%) translateX(0%)";
+    setTimeout(runIntro, 1500)
+}
 
-    var social = document.getElementsByClassName("social");
-    for (var i = 0; i < social.length; i++) {
-        social[i].style.visibility = "visible";
-    }
+function runIntro(){
+    var mainBody = document.getElementById("main-body")
+    mainBody.style.transform = "translateY(0%)";
 }
