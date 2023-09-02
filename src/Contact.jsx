@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./Form.css"; // Import your custom CSS file
+import axios from "axios";
+import "./Form.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,15 +19,36 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form data submitted:", formData);
-    if(formData.name == "" || formData.email == "" || formData.message == ""){
-        var errorText = document.getElementById("error-alert");
-        errorText.style.visibility = "visible";
-        setTimeout(hideError, 5000);
+    if (formData.name == "" || formData.email == "" || formData.message == "") {
+      var errorText = document.getElementById("error-alert");
+      errorText.style.visibility = "visible";
+      setTimeout(hideError, 5000);
+    } else {
+      const form = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      };
+      const requestOptions = {
+        body: JSON.stringify(form),
+      };
+      const headers = {
+        "Content-Type": "application/json",
+      };
+      axios
+        .post(
+          "https://cdgnkm2gnl.execute-api.ap-south-1.amazonaws.com/test",
+          JSON.stringify(form)
+        )
+        .then((response) => {
+          console.log(response.status);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     }
-    // You can add API calls or further processing here
   };
-  function hideError(){
+  function hideError() {
     var errorText = document.getElementById("error-alert");
     errorText.style.visibility = "hidden";
   }
