@@ -7,9 +7,9 @@ const Contact = () => {
   const history = useNavigate();
 
   const [formData, setFormData] = useState({
-    name: "Praveesh",
-    email: "aaaa@mail.com",
-    message: "hi. this is a test",
+    name: "",
+    email: "",
+    message: "",
   });
   const [ifFailed, setIfFailed] = useState(false);
   const[isSubmit, setisSubmit] = useState(false);
@@ -50,7 +50,7 @@ const Contact = () => {
           console.log(response.status);
           setisSubmit(false);
           setIfFailed(false);
-          history("/redirect");
+          history("/thankyou");
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -72,7 +72,7 @@ const Contact = () => {
               <h2>Write me a message!</h2>
               <form className="form" onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label htmlFor="name">Name:</label>
+                  <label htmlFor="name">Name</label>
                   <input
                     type="text"
                     id="name"
@@ -82,7 +82,7 @@ const Contact = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="email">Email:</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     type="email"
                     id="email"
@@ -92,7 +92,7 @@ const Contact = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="message">Message:</label>
+                  <label htmlFor="message">Message</label>
                   <textarea
                     id="message"
                     name="message"
@@ -118,11 +118,11 @@ const Contact = () => {
                     Submit
                   </button>
                 )}
-                {ifFailed ? (
+                {/* {ifFailed ? (
                   <p>An Error occured. Please retry after a while</p>
                 ) : (
                   <p></p>
-                )}
+                )} */}
               </form>
             </div>
           </div>

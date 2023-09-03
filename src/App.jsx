@@ -6,7 +6,7 @@ import Blog from "./Blog";
 import Resume from "./Resume";
 import Projects from "./Projects";
 import Social from "./Social";
-import FormRedirect from "./FormRedirect";
+import ThankYou from "./ThankYou";
 import Error from "./Error";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/home" element={<Navigate to="/" />} />
-        <Route path="/redirect" element={<FormRedirect />} />
+        <Route path="/thankyou" element={<ThankYou />} />
         <Route path="/*" element={<Error />} />
       </Routes>
       <Social />
