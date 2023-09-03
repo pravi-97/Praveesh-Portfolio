@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Form.css";
 
 const Contact = () => {
+  const history = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-
+  const [ifFailed, setIfFailed] = useState(false);
+  const[isSubmit, setisSubmit] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -24,6 +28,7 @@ const Contact = () => {
       errorText.style.visibility = "visible";
       setTimeout(hideError, 5000);
     } else {
+      setisSubmit(true);
       const form = {
         name: formData.name,
         email: formData.email,
@@ -37,14 +42,20 @@ const Contact = () => {
       };
       axios
         .post(
-          "https://cdgnkm2gnl.execute-api.ap-south-1.amazonaws.com/test",
+          // "https://cdgnkm2gnl.execute-api.ap-south-1.amazonaws.com/test",
+          'http://localhost:3000/post',
           JSON.stringify(form)
         )
         .then((response) => {
           console.log(response.status);
+          setisSubmit(false);
+          setIfFailed(false);
+          history("/thankyou");
         })
         .catch((error) => {
           console.error("Error:", error);
+          setisSubmit(false);
+          setIfFailed(true);
         });
     }
   };
@@ -61,7 +72,7 @@ const Contact = () => {
               <h2>Write me a message!</h2>
               <form className="form" onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label htmlFor="name">Name:</label>
+                  <label htmlFor="name">Name</label>
                   <input
                     type="text"
                     id="name"
@@ -71,7 +82,7 @@ const Contact = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="email">Email:</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     type="email"
                     id="email"
@@ -81,7 +92,7 @@ const Contact = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="message">Message:</label>
+                  <label htmlFor="message">Message</label>
                   <textarea
                     id="message"
                     name="message"
@@ -90,9 +101,28 @@ const Contact = () => {
                   />
                 </div>
                 <p id="error-alert">All fields are mandatory</p>
-                <button className="submit-button" type="submit">
-                  Submit
-                </button>
+                {isSubmit ? (
+                  <button
+                    className="submit-button-disabled"
+                    type="submit"
+                    disabled
+                  >
+                    Submiting...
+                  </button>
+                ) : ifFailed ? (
+                  <button className="submit-button" type="submit">
+                    Retry Submit
+                  </button>
+                ) : (
+                  <button className="submit-button" type="submit">
+                    Submit
+                  </button>
+                )}
+                {/* {ifFailed ? (
+                  <p>An Error occured. Please retry after a while</p>
+                ) : (
+                  <p></p>
+                )} */}
               </form>
             </div>
           </div>
