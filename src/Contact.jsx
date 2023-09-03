@@ -42,8 +42,7 @@ const Contact = () => {
       };
       axios
         .post(
-          // "https://cdgnkm2gnl.execute-api.ap-south-1.amazonaws.com/test",
-          'http://localhost:3000/post',
+          "https://cdgnkm2gnl.execute-api.ap-south-1.amazonaws.com/test",
           JSON.stringify(form)
         )
         .then((response) => {
