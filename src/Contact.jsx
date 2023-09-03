@@ -7,12 +7,12 @@ const Contact = () => {
   const history = useNavigate();
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: "Praveesh P",
+    email: "praveesh@mail.com",
+    message: "this is a test message",
   });
   const [ifFailed, setIfFailed] = useState(false);
-  const[isSubmit, setisSubmit] = useState(false);
+  const [isSubmit, setisSubmit] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -42,10 +42,13 @@ const Contact = () => {
       };
       axios
         .post(
-          "https://cdgnkm2gnl.execute-api.ap-south-1.amazonaws.com/test",
+          // "https://cdgnkm2gnl.execute-api.ap-south-1.amazonaws.com/test",
+          "http://localhost:3000/post",
           JSON.stringify(form)
         )
         .then((response) => {
+          var errorText = document.getElementById("form-submit-error");
+          errorText.style.visibility = "hidden";
           console.log(response.status);
           setisSubmit(false);
           setIfFailed(false);
@@ -55,6 +58,8 @@ const Contact = () => {
           console.error("Error:", error);
           setisSubmit(false);
           setIfFailed(true);
+          var errorText = document.getElementById("form-submit-error");
+          errorText.style.visibility = "visible";
         });
     }
   };
@@ -64,6 +69,12 @@ const Contact = () => {
   }
   return (
     <section id="contact-section">
+      <div id="form-submit-error">
+        <p>
+          An Error occured while submitting the form. Please retry after a
+          while!
+        </p>
+      </div>
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-12">

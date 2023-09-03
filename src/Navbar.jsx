@@ -1,6 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+
+  // Define an array of routes and their corresponding link text
+  const routes = [
+    { path: "/home", text: "Home" },
+    { path: "/projects", text: "Projects" },
+    { path: "/resume", text: "Resume" },
+    { path: "/blog", text: "Blog" },
+    { path: "/contact", text: "Contact" },
+  ];
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg">
@@ -19,41 +30,23 @@ const Navbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          {/* <div className="collapse navbar-collapse" id="navbarNav"></div> */}
           <div
             className="collapse navbar-collapse justify-content-end"
             id="navbarNav"
           >
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/home"
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/projects">
-                  Projects
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/resume">
-                  Resume
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/blog">
-                  Blog
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/contact">
-                  Contact
-                </Link>
-              </li>
+              {routes.map((route, index) => (
+                <li className="nav-item" key={index}>
+                  <Link
+                    className={`nav-link ${
+                      location.pathname === route.path ? "active" : ""
+                    }`}
+                    to={route.path}
+                  >
+                    {route.text}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
