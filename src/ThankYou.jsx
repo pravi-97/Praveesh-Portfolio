@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "./Thankyou.css";
+import "./styles/Thankyou.css";
 const ThankYou = () => {
   const navigate = useNavigate();
 

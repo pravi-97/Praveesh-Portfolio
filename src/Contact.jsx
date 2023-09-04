@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./Form.css";
+import "./styles/Form.css";
 
 const Contact = () => {
   const history = useNavigate();
@@ -42,8 +42,7 @@ const Contact = () => {
       };
       axios
         .post(
-          // "https://cdgnkm2gnl.execute-api.ap-south-1.amazonaws.com/test",
-          "http://localhost:3000/post",
+          "https://cdgnkm2gnl.execute-api.ap-south-1.amazonaws.com/test",
           JSON.stringify(form)
         )
         .then((response) => {
@@ -128,11 +127,6 @@ const Contact = () => {
                     Submit
                   </button>
                 )}
-                {/* {ifFailed ? (
-                  <p>An Error occured. Please retry after a while</p>
-                ) : (
-                  <p></p>
-                )} */}
               </form>
             </div>
           </div>

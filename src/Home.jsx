@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import praveeshImage from "./images/praveesh.jpg"; // Adjust the path as needed
-import "./App.css";
+import "./styles/App.css";
 
 const Home = () => {
   const displayMain = () => {

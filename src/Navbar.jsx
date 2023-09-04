@@ -1,11 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
-
+import './styles/Navbar.css'
 const Navbar = () => {
   const location = useLocation();
 
   // Define an array of routes and their corresponding link text
   const routes = [
-    { path: "/home", text: "Home" },
+    { path: "/", text: "Home" },
     { path: "/projects", text: "Projects" },
     { path: "/resume", text: "Resume" },
     { path: "/blog", text: "Blog" },
