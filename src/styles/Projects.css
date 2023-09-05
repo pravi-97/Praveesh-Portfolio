@@ -1,0 +1,9 @@
+.projectName,
+.projectDescription{
+    text-align: justify;
+}
+
+th{
+    padding: 10px;
+    color: black;
+}

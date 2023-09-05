@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "./styles/Projects.css";
 
 const Projects = () => {
   const [projectList, setProjectList] = useState([]);
@@ -21,29 +22,53 @@ const Projects = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; 
+    return (
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>; 
+    return <div>Error: {error.message}</div>;
   }
 
   return (
     <div className="container-fluid">
       <table>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>App Link</th>
-            <th>Repository Link</th>
-          </tr>
+        <tr>
+          <th>Sl No</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>App Link</th>
+          <th>Repository Link</th>
+        </tr>
         {Array.isArray(projectList) && projectList.length > 0 ? (
           projectList.map((project, index) => (
             <tr key={index}>
-              <td>{project.name}</td>
-              <td>{project.about}</td>
-              <td>{project.application}</td>
-              <td>{project.github}</td>
+              <td>{index + 1}</td>
+              <td className="projectName">{project.name}</td>
+              <td className="projectDescription">{project.about}</td>
+              <td>
+                <a
+                  href={project.application}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open App
+                </a>
+              </td>
+              <td>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-square-github"></i>
+                </a>
+              </td>
             </tr>
           ))
         ) : (

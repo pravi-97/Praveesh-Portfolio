@@ -13,47 +13,29 @@ const Social = () => {
   useEffect(() => {
     setTimeout(displaySocial, 2000);
   }, []);
+
+  const socials = [
+    { cName: "fa-brands fa-linkedin", link: "https://www.linkedin.com/in/praveesh-p" },
+    { cName: "fa-brands fa-square-facebook", link: "https://www.facebook.com/pravi894" },
+    { cName: "fa-brands fa-square-x-twitter", link: "https://twitter.com/pravi894" },
+    { cName: "fa-brands fa-square-instagram", link: "https://www.instagram.com/pravi894" },
+    { cName: "fa-brands fa-square-github", link: "https://github.com/pravi-97"}
+  ];
   return (
     <div>
       <section id="social-links">
         <div className="svg-btn text-center">
           <ul>
-            <li className="social">
-              <a
-                href="https://www.linkedin.com/in/praveesh-p"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-brands fa-linkedin icon-large"></i>
-              </a>
-            </li>
-            <li className="social">
-              <a
-                href="https://www.facebook.com/pravi894"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-brands fa-facebook"></i>
-              </a>
-            </li>
-            <li className="social">
-              <a
-                href="https://twitter.com/pravi894"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-brands fa-square-x-twitter"></i>
-              </a>
-            </li>
-            <li className="social">
-              <a
-                href="https://www.instagram.com/pravi894"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-brands fa-square-instagram"></i>
-              </a>
-            </li>
+            {socials.map((social, index) =>(
+              <li className="social" key={index}>
+                <a
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <i className={social.cName}></i>
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
