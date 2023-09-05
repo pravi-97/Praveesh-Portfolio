@@ -3,13 +3,14 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./styles/Form.css";
 
+console.log("REACT_APP_TITLE: ");
 const Contact = () => {
   const history = useNavigate();
 
   const [formData, setFormData] = useState({
-    name: "Praveesh P",
-    email: "praveesh@mail.com",
-    message: "this is a test message",
+    name: "",
+    email: "",
+    message: "",
   });
   const [ifFailed, setIfFailed] = useState(false);
   const [isSubmit, setisSubmit] = useState(false);

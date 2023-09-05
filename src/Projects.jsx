@@ -21,11 +21,11 @@ const Projects = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // You can use a loading spinner here.
+    return <div>Loading...</div>; 
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>; // Display an error message if there's an error.
+    return <div>Error: {error.message}</div>; 
   }
 
   return (
