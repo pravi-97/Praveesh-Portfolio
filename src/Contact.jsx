@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./Form.css";
+import "./styles/Form.css";
 
+console.log("REACT_APP_TITLE: ");
 const Contact = () => {
   const history = useNavigate();
 
@@ -12,7 +13,7 @@ const Contact = () => {
     message: "",
   });
   const [ifFailed, setIfFailed] = useState(false);
-  const[isSubmit, setisSubmit] = useState(false);
+  const [isSubmit, setisSubmit] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -46,6 +47,8 @@ const Contact = () => {
           JSON.stringify(form)
         )
         .then((response) => {
+          var errorText = document.getElementById("form-submit-error");
+          errorText.style.visibility = "hidden";
           console.log(response.status);
           setisSubmit(false);
           setIfFailed(false);
@@ -55,6 +58,8 @@ const Contact = () => {
           console.error("Error:", error);
           setisSubmit(false);
           setIfFailed(true);
+          var errorText = document.getElementById("form-submit-error");
+          errorText.style.visibility = "visible";
         });
     }
   };
@@ -64,6 +69,12 @@ const Contact = () => {
   }
   return (
     <section id="contact-section">
+      <div id="form-submit-error">
+        <p>
+          An Error occured while submitting the form. Please retry after a
+          while!
+        </p>
+      </div>
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-12">
@@ -117,11 +128,6 @@ const Contact = () => {
                     Submit
                   </button>
                 )}
-                {/* {ifFailed ? (
-                  <p>An Error occured. Please retry after a while</p>
-                ) : (
-                  <p></p>
-                )} */}
               </form>
             </div>
           </div>

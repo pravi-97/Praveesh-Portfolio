@@ -4,7 +4,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
+#form-submit-error{
+    visibility: hidden;
+    transition: 1s;
+}
+#form-submit-error p{
+    font-size: 3.5vh;
+}
 @media (max-width: 991px) {
    #thank-you {
         position: static;
