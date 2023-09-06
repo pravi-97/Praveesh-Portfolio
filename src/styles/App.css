@@ -54,42 +54,10 @@
 
 #main-body {
   font-size: 1.1em;
-  /* visibility: hidden; */
+  visibility: hidden;
   /* transform: translateX(-110%); */
   transform: translateY(120%);
   transition: 1.5s;
-}
-
-#social-links {
-  width: 100px;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%) translateX(-50%);
-  transition: 1.5s;
-}
-
-#social-links ul {
-  list-style-type: none;
-  background-color: rgba(0, 0, 0, 0.247);
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 10px;
-  margin-left: 10px;
-}
-
-.social {
-  padding: 10px;
-}
-
-.fa-brands {
-  color: #000;
-  width: 50;
-  transition: 0.3s;
-  font-size: 30px;
-}
-
-.social:hover .fa-brands {
-  transform: translateX(5px) scale(1.5);
 }
 
 @media (max-width: 991px) {
