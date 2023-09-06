@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import praveeshImage from "./images/praveesh.jpg"; // Adjust the path as needed
+import praveeshImage from "./images/praveesh.jpg"; 
 import "./styles/App.css";
 
 const Home = () => {
@@ -13,6 +13,7 @@ const Home = () => {
   };
   const runIntro = () => {
     var mainBody = document.getElementById("main-body");
+    mainBody.style.visibility = "visible";
     mainBody.style.transform = "translateY(0%)";
   };
   useEffect(() => {

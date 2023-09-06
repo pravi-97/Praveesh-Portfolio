@@ -3,7 +3,6 @@ import './styles/Navbar.css'
 const Navbar = () => {
   const location = useLocation();
 
-  // Define an array of routes and their corresponding link text
   const routes = [
     { path: "/", text: "Home" },
     { path: "/projects", text: "Projects" },
