@@ -36,6 +36,9 @@
 }
 
 @media (max-width: 768px) {
+    /* *{
+        min-height: 1vh;
+    } */
 
     .social,
     .social:hover,
@@ -44,7 +47,7 @@
     }
 
     #social-links {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         width: 100%;
         left: 0;
