@@ -1,8 +1,26 @@
 import { Link, useLocation } from "react-router-dom";
-import './styles/Navbar.css'
+import { useEffect } from "react";
+import "./styles/Navbar.css";
 const Navbar = () => {
   const location = useLocation();
 
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      const navbar = document.querySelector(".navbar-collapse");
+      if (
+        navbar.classList.contains("show") &&
+        !event.target.closest(".navbar-collapse")
+      ) {
+        navbar.classList.remove("show");
+      }
+    };
+    document.addEventListener("click", handleDocumentClick);
+
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, []);
+  
   const routes = [
     { path: "/", text: "Home" },
     { path: "/projects", text: "Projects" },
