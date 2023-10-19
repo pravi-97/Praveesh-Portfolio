@@ -1,0 +1,23 @@
+.blog-content .text-area h2,
+.blog-content .text-area p{
+    text-align: left;
+}
+.created-at,
+.text-area{
+    /* position: relative; */
+}
+
+.text-area {
+    /* text-align: justify */
+}
+
+.created-at{
+    text-align: right !important;
+}
+.blog-content .text-area{
+    padding: 10px 20px 10px 20px;
+    border-radius: 15px;
+}
+.blog-content .text-area:hover{
+    background-color: rgba(0, 0, 0, 0.315);
+}
