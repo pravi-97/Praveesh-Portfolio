@@ -16,6 +16,9 @@ const Home = () => {
     mainBody.style.visibility = "visible";
     mainBody.style.transform = "translateY(0%)";
   };
+    useEffect(() => {
+      document.title = "Praveesh P";
+    }, []);
   useEffect(() => {
     displayMain();
     setTimeout(runIntro, 3500);

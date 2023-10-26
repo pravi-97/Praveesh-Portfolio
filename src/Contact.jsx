@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./styles/Form.css";
@@ -20,7 +20,9 @@ const Contact = () => {
       [name]: value,
     }));
   };
-
+  useEffect(() => {
+    document.title = "Praveesh P | Contact";
+  }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.name == "" || formData.email == "" || formData.message == "") {

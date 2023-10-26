@@ -8,7 +8,9 @@ const API_URL_LOCAL = "http://localhost:3000/get"
   const [projectList, setProjectList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  useEffect(() => {
+    document.title = "Praveesh P | Projects";
+  }, []);
   useEffect(() => {
     axios
       .get(API_URL)
