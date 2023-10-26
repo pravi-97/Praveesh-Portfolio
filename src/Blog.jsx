@@ -9,6 +9,9 @@ const Blog = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
   let bodyParts = [];
+    useEffect(() => {
+      document.title = "Praveesh P | Blogs";
+    }, []);
   useEffect(() => {
     axios
       .get("http://localhost:3000/get/"+id)

@@ -11,6 +11,9 @@ const Blogs = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    document.title = "Praveesh P | Blogs";
+  }, []);
+  useEffect(() => {
     axios
       .get("https://yavvlidt1i.execute-api.ap-south-1.amazonaws.com/prod/")
       .then((response) => {
@@ -41,7 +44,7 @@ const Blogs = () => {
       <h1>Blogs</h1>
       <div className="container">
         {blogList.map((blog, index) => (
-          <Link className="navbar-brand" to={`/blog/${blog.title}`}>
+          <Link className="navbar-brand" key={index} to={`/blog/${blog.title}`}>
             <div className="row" key={index}>
               <div className="col-md-12">
                 <div className="blog-content">

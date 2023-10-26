@@ -8,7 +8,9 @@ const ThankYou = () => {
   function returnHome() {
     navigate("/home");
   }
-
+  useEffect(() => {
+    document.title = "Praveesh P | Thankyou";
+  }, []);
   useEffect(() => {
     const timeoutId = setTimeout(returnHome, 10000);
 
