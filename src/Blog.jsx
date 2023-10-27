@@ -5,20 +5,23 @@ import "./styles/Blog.css";
 const Blog = () => {
   const { id } = useParams();
   // console.log("id: ", id);
-    const [blog, setBlog] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+  const [blog, setBlog] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   let bodyParts = [];
-    useEffect(() => {
-      document.title = "Praveesh P | Blogs";
-    }, []);
   useEffect(() => {
+    document.title = "Praveesh P | Blogs";
+  }, []);
+  useEffect(() => {
+    const url =
+      `https://cvv66er0kd.execute-api.ap-south-1.amazonaws.com/prod?title=${id}`;
+      console.log("url: ",url)
     axios
-      .get("http://localhost:3000/get/"+id)
+      .get(url)
       .then((response) => {
-        setBlog(response.data.message[0]);
+        setBlog(response);
         setLoading(false);
-        bodyParts = (blog.body);
+        console.log(response);
       })
       .catch((error) => {
         console.log(error);
@@ -26,20 +29,17 @@ const Blog = () => {
         setLoading(false);
       });
   }, []);
-  
 
-    if (loading) {
-      return (
-        <div className="d-flex justify-content-center">
-          <div className="spinner-border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
-      );
-    }
-  return (
-    <hello></hello>
-  );
+      </div>
+    );
+  }
+  return <div>{blog.body}</div>;
 };
 
 export default Blog;
