@@ -1,31 +1,36 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./styles/Blog.css";
 const Blog = () => {
+  const navigate = useNavigate();
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
   const { id } = useParams();
-  // console.log("id: ", id);
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  let bodyParts = [];
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
   useEffect(() => {
     document.title = "Praveesh P | Blogs";
   }, []);
   useEffect(() => {
     const url =
-      `https://cvv66er0kd.execute-api.ap-south-1.amazonaws.com/prod?title=${id}`;
-      console.log("url: ",url)
+      "https://cvv66er0kd.execute-api.ap-south-1.amazonaws.com/prod?title=" +
+      id;
     axios
       .get(url)
       .then((response) => {
-        setBlog(response);
+        setBlog(response.data[0]);
         setLoading(false);
-        console.log(response);
       })
       .catch((error) => {
-        console.log(error);
-        setError(error);
+        setErrorMessage(error);
+        console.error(errorMessage)
+        setError(true);
         setLoading(false);
       });
   }, []);
@@ -39,7 +44,35 @@ const Blog = () => {
       </div>
     );
   }
-  return <div>{blog.body}</div>;
+  if (error){
+    return (
+      <div>
+        <h1>An error Occurred</h1>
+        <button type="button" onClick={refreshPage}>
+          <span>Reload</span>
+        </button>
+      </div>
+    );
+  }
+    return (
+      <div>
+        <div className="goback" type="button" onClick={() => navigate(-1)}>
+          <span>
+            <i className="fa-solid fa-circle-arrow-left"></i>
+          </span>
+        </div>
+        <div className="container">
+          <div className="row">
+            <h1 className="title_heading">{blog.title}</h1>
+            {blog.body.split("repellendus").map((para, index) => (
+              <p className="title-body" key={index}>
+                {para}
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
 };
 
 export default Blog;

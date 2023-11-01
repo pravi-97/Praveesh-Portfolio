@@ -1,9 +1,9 @@
 #social-links {
     width: 100px;
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform: translate(-50%, -50%) translateX(-50%);
-    transition: 1.5s ease;
+    transition: 1.5s cubic-bezier(0, 0, 0, 1);
     /* transition: transform 0.3s ease; */
     background-color: white !important;
 }
@@ -39,9 +39,6 @@
 }
 
 @media (max-width: 768px) {
-    /* *{
-        min-height: 1vh;
-    } */
 
     .social,
     .social:hover,
@@ -50,6 +47,7 @@
     }
 
     #social-links {
+        /* margin-top: 50px !important; */
         position: fixed;
         bottom: 0;
         width: 100%;
