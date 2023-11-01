@@ -64,7 +64,7 @@ const Blog = () => {
         <div className="container">
           <div className="row">
             <h1 className="title_heading">{blog.title}</h1>
-            {blog.body.split("repellendus").map((para, index) => (
+            {blog.body.split("\n").map((para, index) => (
               <p className="title-body" key={index}>
                 {para}
               </p>
