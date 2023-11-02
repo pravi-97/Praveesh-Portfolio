@@ -2,20 +2,15 @@
 .blog-content .text-area p{
     text-align: left;
 }
-.created-at,
-.text-area{
-    /* position: relative; */
-}
-
 .text-area {
-    /* text-align: justify */
+    overflow: hidden;
 }
 
 .created-at{
     text-align: right !important;
 }
 .blog-content .text-area{
-    padding: 10px 20px 10px 20px;
+    padding: 10px 10px 10px 10px;
     border-radius: 15px;
 }
 .blog-content .text-area:hover{

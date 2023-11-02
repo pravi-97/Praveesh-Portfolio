@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const createdAt = new Date();
-createdAt.setDate(createdAt.getDate());
 const Blogs = () => {
   const [blogList, setBlogList] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,6 +15,7 @@ const Blogs = () => {
     axios
       .get("https://yavvlidt1i.execute-api.ap-south-1.amazonaws.com/prod/")
       .then((response) => {
+        console.log(response)
         setBlogList(response.data.message);
         setLoading(false);
       })
@@ -51,7 +50,13 @@ const Blogs = () => {
                   <div className="text-area">
                     <h2>{blog.title}</h2>
                     <p>{blog.smallHeading}</p>
-                    <div className="created-at">{Date(blog.created_at)}</div>
+                    <div className="created-at">
+                      <strong>
+                        {Date(blog.created_at).substring(4, 7)}/
+                        {Date(blog.created_at).substring(8, 10)}/
+                        {Date(blog.created_at).substring(11, 15)}
+                      </strong>
+                    </div>
                   </div>
                 </div>
               </div>

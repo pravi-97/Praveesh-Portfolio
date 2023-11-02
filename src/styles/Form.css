@@ -66,11 +66,14 @@ textarea {
 }
 
 #error-alert {
+    text-align: center;
     visibility: hidden;
     color: red;
     transition: 1s;
 }
-
+#form-submit-error p {
+    text-align: center;
+}
 @media (max-width: 991px) {
     .container-fluid {
         /* margin-bottom: 20%; */
