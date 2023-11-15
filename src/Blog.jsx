@@ -1,6 +1,7 @@
 import { useParams, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Loader from "./Loader";
 import "./styles/Blog.css";
 const Blog = () => {
   const navigate = useNavigate();
@@ -37,11 +38,7 @@ const Blog = () => {
 
   if (loading) {
     return (
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      </div>
+      <Loader/>
     );
   }
   if (error){

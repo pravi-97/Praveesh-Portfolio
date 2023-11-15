@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import Loader from "./Loader";
 
 const Resume = () => {
   useEffect(() => {
     document.title = "Praveesh P | Resume";
   }, []);
-  return <h1>Resume</h1>;
+  return <Loader/>;
 };
 
 export default Resume;

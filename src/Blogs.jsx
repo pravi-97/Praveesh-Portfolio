@@ -1,6 +1,7 @@
 import "./styles/Blogs.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 import axios from "axios";
 
 const Blogs = () => {
@@ -28,11 +29,7 @@ const Blogs = () => {
 
   if (loading) {
     return (
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      </div>
+      <Loader/>
     );
   }
   if (error) {
