@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./styles/Projects.css";
+import Loader from "./Loader";
 
 const API_URL = "https://9bwco2fqb0.execute-api.ap-south-1.amazonaws.com/prod";
 const API_URL_LOCAL = "http://localhost:3000/get"
@@ -26,11 +27,7 @@ const API_URL_LOCAL = "http://localhost:3000/get"
 
   if (loading) {
     return (
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      </div>
+      <Loader/>
     );
   }
 
