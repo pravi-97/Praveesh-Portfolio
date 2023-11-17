@@ -25,7 +25,11 @@ const Contact = () => {
   }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.name == "" || formData.email == "" || formData.message == "") {
+    if (
+      formData.name.trim() == "" ||
+      formData.email.trim() == "" ||
+      formData.message.trim() == ""
+    ) {
       var errorText = document.getElementById("error-alert");
       errorText.style.visibility = "visible";
       setTimeout(hideError, 5000);
