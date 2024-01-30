@@ -48,7 +48,7 @@ const Contact = () => {
       };
       axios
         .post(
-          "https://cdgnkm2gnl.execute-api.ap-south-1.amazonaws.com/test",
+          "https://5wyigq88j2.execute-api.ap-south-1.amazonaws.com/prod",
           JSON.stringify(form)
         )
         .then((response) => {
