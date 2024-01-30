@@ -3,8 +3,7 @@ import axios from "axios";
 import "./styles/Projects.css";
 import Loader from "./Loader";
 
-const API_URL = "https://9bwco2fqb0.execute-api.ap-south-1.amazonaws.com/prod";
-const API_URL_LOCAL = "http://localhost:3000/get"
+const API_URL = "https://zb2b1wi7ug.execute-api.ap-south-1.amazonaws.com/prod";
 ;const Projects = () => {
   const [projectList, setProjectList] = useState([]);
   const [loading, setLoading] = useState(true);
