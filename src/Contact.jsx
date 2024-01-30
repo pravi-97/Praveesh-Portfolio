@@ -49,12 +49,14 @@ const Contact = () => {
       axios
         .post(
           "https://5wyigq88j2.execute-api.ap-south-1.amazonaws.com/prod",
-          JSON.stringify(form)
+          JSON.stringify(form),
         )
         .then((response) => {
-          var errorText = document.getElementById("form-submit-error");
+          if (response.data.statusCode != 200){
+            throw "Error";
+          }
+            var errorText = document.getElementById("form-submit-error");
           errorText.style.visibility = "hidden";
-          console.log(response.status);
           setisSubmit(false);
           setIfFailed(false);
           history("/thankyou");
