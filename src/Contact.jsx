@@ -49,13 +49,13 @@ const Contact = () => {
       axios
         .post(
           "https://5wyigq88j2.execute-api.ap-south-1.amazonaws.com/prod",
-          JSON.stringify(form),
+          JSON.stringify(requestOptions)
         )
         .then((response) => {
-          if (response.data.statusCode != 200){
+          if (response.data.statusCode != 200) {
             throw "Error";
           }
-            var errorText = document.getElementById("form-submit-error");
+          var errorText = document.getElementById("form-submit-error");
           errorText.style.visibility = "hidden";
           setisSubmit(false);
           setIfFailed(false);
