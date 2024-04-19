@@ -54,23 +54,29 @@ const API_URL = "https://zb2b1wi7ug.execute-api.ap-south-1.amazonaws.com/prod";
                 <td>{project.name}</td>
                 <td className="projectDescription">{project.about}</td>
                 <td>
-                  {project.active ? (<a
-                    href={project.application}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Open App
-                  </a>) : ("The project is not active yet!")}
-                  
+                  {project.active ? (
+                    <a
+                      href={project.application}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Open App
+                    </a>
+                  ) : (
+                    "The project is not active yet!"
+                  )}
                 </td>
                 <td>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa-brands fa-square-github"></i>
-                  </a>
+                  {project.github.split(",").map((link, index) => (
+                    <a style={{margin:"5px"}}
+                      key={index} // Add a unique key for each link
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fa-brands fa-square-github"></i>
+                    </a>
+                  ))}
                 </td>
               </tr>
             ))

@@ -1,14 +1,19 @@
-.projectDescription{
+.projectDescription {
     text-align: justify;
 }
-table{
+
+table {
     margin-left: 2%;
     margin-right: 2%
 }
-th{
+
+th {
     padding: 10px;
     color: black;
 }
-tr,th,td{
+
+tr,
+th,
+td {
     border: 1px solid black;
 }
