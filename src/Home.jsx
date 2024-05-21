@@ -36,10 +36,7 @@ const Home = () => {
               <div id="col-left">
                 <p id="main-heading">Hello There! I'm Praveesh.</p>
                 <p id="main-body">
-                  I'm a developer with a delightful 2 years of experience
-                  working with Infosys. My main focus revolves around Java
-                  applications, but in my moments of leisure, I enjoy diving
-                  into the realms of React.
+                  I'm a developer with a delightful 3 years of experience working with Infosys. My main focus revolves around Java applications, but in my moments of leisure, I enjoy diving into the realms of React. I currently work as a Software Engineer at Incture Technologies.
                 </p>
               </div>
             </div>
