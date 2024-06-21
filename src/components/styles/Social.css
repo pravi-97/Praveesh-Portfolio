@@ -1,10 +1,10 @@
 #social-links {
+  z-index: 999;
   width: 100px;
   position: fixed;
   top: 50%;
-  transform: translate(-50%, -50%);
-  /* transform: translateX(-50%); */
-  transition: 1.5s cubic-bezier(0, 0, 0, 1);
+  transform: translate(-100%, -50%);
+  transition: 2s cubic-bezier(0, 0, 0, 1);
   background-color: transparent !important;
   mix-blend-mode: difference;
 }
@@ -12,7 +12,6 @@
 #social-links ul {
   z-index: 100;
   list-style-type: none;
-  /* background-color: rgba(0, 0, 0, 0.247); */
   background-color: transparent;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -36,4 +35,9 @@
 .social:hover .fa-brands {
   transform: scale(1.5);
   /* color: #ff0000; */
+}
+
+#social-links {
+  transition: 0.5s;
+  /* visibility: hidden; */
 }

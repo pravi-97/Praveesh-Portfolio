@@ -1,5 +1,5 @@
 #navbar-header{
-    position: fixed;
+    position: absolute;
 }
 .navbar-nav .nav-link {
     transition: 0.5s ease;
@@ -26,6 +26,5 @@
 
 .navbar-nav .nav-link.active{
     color: #FFffff;
-    /* border: 2px solid #FF0000; */
     background-color: #ff000041;
 }

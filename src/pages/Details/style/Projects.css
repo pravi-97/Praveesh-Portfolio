@@ -1,0 +1,9 @@
+#project-section{
+  overflow-y: auto;
+  height: 100vh;
+}
+
+#project-section .projects{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

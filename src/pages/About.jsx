@@ -7,19 +7,16 @@ const About = () => {
   const [type, setType] = useState("about");
   function getDetails(topic) {
     setType(topic);
+    window.location.href = "#about-section";
     if (topic == "about") {
       document.getElementById("button-about").click();
-    }
-    else if (topic == "resume") {
+    } else if (topic == "resume") {
       document.getElementById("button-resume").click();
-    }
-    else if (topic == "projects") {
+    } else if (topic == "projects") {
       document.getElementById("button-projects").click();
-    }
-    else if (topic == "skills") {
+    } else if (topic == "skills") {
       document.getElementById("button-skills").click();
-    }
-    else document.getElementById("button-about").click();
+    } else document.getElementById("button-about").click();
   }
   return (
     <section id="about-section">
@@ -51,6 +48,12 @@ const About = () => {
                       <div onClick={() => getDetails("about")} className="card">
                         <div className="card-body">
                           <div className="card-title">About</div>
+                          <div className="go-corner">
+                            <i
+                              className="fa-solid fa-arrow-right-long fa-2xs go-arrow"
+                              style={{ color: "#ffffff" }}
+                            ></i>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -61,6 +64,12 @@ const About = () => {
                       >
                         <div className="card-body">
                           <div className="card-title">Resume</div>
+                          <div className="go-corner">
+                            <i
+                              className="fa-solid fa-arrow-right-long fa-2xs go-arrow"
+                              style={{ color: "#ffffff" }}
+                            ></i>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -71,6 +80,12 @@ const About = () => {
                       >
                         <div className="card-body">
                           <div className="card-title">Projects</div>
+                          <div className="go-corner">
+                            <i
+                              className="fa-solid fa-arrow-right-long fa-2xs go-arrow"
+                              style={{ color: "#ffffff" }}
+                            ></i>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -81,6 +96,12 @@ const About = () => {
                       >
                         <div className="card-body">
                           <div className="card-title">Skills</div>
+                          <div className="go-corner">
+                            <i
+                              className="fa-solid fa-arrow-right-long fa-2xs go-arrow"
+                              style={{ color: "#ffffff" }}
+                            ></i>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -91,7 +112,7 @@ const About = () => {
           </div>
           <div className="col-md-6" id="details-section">
             <div id="details-section-actual">
-              <Details type={type} />
+              <Details />
             </div>
           </div>
         </div>
