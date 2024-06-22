@@ -6,9 +6,9 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <Link className="navbar-brand" id="navbar-name" to="/">
-            <span className="navbar-tag">&lt;/</span>
+            <span className="navbar-tag">&lt;</span>
             <span className="navbar-name">Praveesh</span>
-            <span className="navbar-tag">&gt;</span>
+            <span className="navbar-tag">/&gt;</span>
           </Link>
         </div>
       </nav>

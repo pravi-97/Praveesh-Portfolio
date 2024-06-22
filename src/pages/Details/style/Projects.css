@@ -1,9 +1,19 @@
-#project-section{
+#project-section {
   overflow-y: auto;
   height: 100vh;
 }
 
-#project-section .projects{
+.tables {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+.tables td {
+  padding: 2px;
+}
+.app_desc {
+  vertical-align: top;
+}
+tr > td:nth-child(1) {
+  padding-right: 10px;
+  font-weight: bold;
 }

@@ -2,6 +2,12 @@ import { useEffect } from "react";
 import "./styles/Home.css";
 const Home = () => {
   useEffect(() => {
+    const tooltipTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]'
+    );
+    const tooltipList = [...tooltipTriggerList].map(
+      (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+    );
     const text1 = "Hello There! I'm ".split("");
     document.getElementById("paint-it-white").textContent = "";
     let timeouts = [];
@@ -24,7 +30,8 @@ const Home = () => {
     }
     let timeout = setTimeout(() => {
       document.getElementById("navbar-header").style.opacity = "1";
-      document.getElementById("social-links").style.transform = "translate(-50%, -50%)";
+      document.getElementById("social-links").style.transform =
+        "translate(-50%, -50%)";
       document.getElementById("main-heading-2").style.visibility = "visible";
       document.getElementById("main-heading-2").style.opacity = "1";
       document.getElementById("about-section").style.display = "block";
@@ -34,20 +41,20 @@ const Home = () => {
     timeouts.push(timeout);
     return () => timeouts.forEach((timeout) => clearTimeout(timeout));
   }, []);
-function blinkHide(){
-  const blink = document.getElementById("blink_it");
-  blink.style.visibility = "hidden";
-  setTimeout(() => {
-    blinkShow();
-  }, 300);
-}
-function blinkShow(){
-  const blink = document.getElementById("blink_it");
-  blink.style.visibility = "visible";
-  setTimeout(() => {
-    blinkHide();
-  }, 700);
-}
+  function blinkHide() {
+    const blink = document.getElementById("blink_it");
+    blink.style.visibility = "hidden";
+    setTimeout(() => {
+      blinkShow();
+    }, 300);
+  }
+  function blinkShow() {
+    const blink = document.getElementById("blink_it");
+    blink.style.visibility = "visible";
+    setTimeout(() => {
+      blinkHide();
+    }, 700);
+  }
   return (
     <section id="home-section">
       <div className="container" id="home-container">
@@ -65,6 +72,9 @@ function blinkShow(){
                   className="btn btn-primary home-button"
                   href="https://praveesh-resume.s3.ap-south-1.amazonaws.com/Praveesh_Resume.docx"
                   type="button"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  data-bs-title="Click to download Resume"
                 >
                   Resume{" "}
                   <i

@@ -1,13 +1,23 @@
 import "./style/Resume.css";
 const Resume = () => {
   return (
-    <div  id="resume-section">
+    <div id="resume-section">
       <div id="index-section">
-        <div className="index-items"><a href="#professional-summary">Proffessional Summary</a></div>
-        <div className="index-items"><a href="#employment-history">Employment History</a></div>
-        <div className="index-items"><a href="#education-details">Education</a></div>
-        <div className="index-items"><a href="#certification-details">Certification</a></div>
-        <div className="index-items"><a href="#personal-details">Other Details</a></div>
+        <div className="index-items">
+          <a href="#professional-summary">Proffessional Summary</a>
+        </div>
+        <div className="index-items">
+          <a href="#employment-history">Employment History</a>
+        </div>
+        <div className="index-items">
+          <a href="#education-details">Education</a>
+        </div>
+        <div className="index-items">
+          <a href="#certification-details">Certification</a>
+        </div>
+        <div className="index-items">
+          <a href="#personal-details">Other Details</a>
+        </div>
       </div>
       <div>
         <h1>Resume</h1>
@@ -38,12 +48,14 @@ const Resume = () => {
             <p className="company">Incture Technologies</p>
             <p className="city">Mangaluru</p>
           </div>
+          <hr/>
           <div className="emp-history">
             <p className="period">Jul 2023 - May 2024</p>
             <p className="designation">Systems Engineer</p>
             <p className="company">Infosys Limited</p>
             <p className="city">Mangaluru</p>
           </div>
+          <hr/>
           <div className="emp-history">
             <p className="period">May 2021 - Jul 2023</p>
             <p className="designation">Systems Engineer</p>
@@ -59,12 +71,14 @@ const Resume = () => {
             <p className="school-college">Shree Devi Institute of Technology</p>
             <p className="city">Mangaluru</p>
           </div>
+          <hr/>
           <div className="edu-history">
             <p className="period">2014 - 2016</p>
             <p className="specialiation">Pre-University</p>
             <p className="school-college">Sharada P.U. College, Mangalore</p>
             <p className="city">Mangaluru</p>
           </div>
+          <hr/>
           <div className="edu-history">
             <p className="period">2013 - 2014</p>
             <p className="specialiation">SSLC</p>
@@ -85,20 +99,23 @@ const Resume = () => {
           <h2>Other Details</h2>
           <div className="per-prof">
             <table>
-              <tr>
-                <td>Date of Birth:</td>
-                <td>
-                  2<sup>nd</sup> November 1997
-                </td>
-              </tr>
-              <tr>
-                <td>Nationality:</td>
-                <td>Indian</td>
-              </tr>
-              <tr>
-                <td>Languages Known:</td>
-                <td>English, Hindi, Malayalam, Kannada, Konkani </td>
-              </tr>
+              <thead></thead>
+              <tbody>
+                <tr>
+                  <td>Date of Birth:</td>
+                  <td>
+                    2<sup>nd</sup> November 1997
+                  </td>
+                </tr>
+                <tr>
+                  <td>Nationality:</td>
+                  <td>Indian</td>
+                </tr>
+                <tr>
+                  <td>Languages Known:</td>
+                  <td>English, Hindi, Malayalam, Kannada, Konkani </td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
