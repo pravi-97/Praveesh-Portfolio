@@ -1,6 +1,19 @@
-.skill_name{
-    width: auto;
-}
+.skill_name,
 .skill_knowledge{
-    width: auto;
+    padding: 0.3em;
+}
+.skill_name{
+    width: 20%;
+    font-weight: bold;
+    font-size: 1em;
+}
+.progress{
+    background-color: #ff00004a;
+}
+.progress-bar{
+    background-color: #ff0000;
+}
+
+table{
+    padding-top: 10px;
 }

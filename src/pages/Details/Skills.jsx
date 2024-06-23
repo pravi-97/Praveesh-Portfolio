@@ -1,39 +1,48 @@
 import "./style/Skills.css";
+
 const Skills = () => {
+  const skillArr = [
+    { skill: "Java", range: 80 },
+    { skill: "Html", range: 80 },
+    { skill: "CSS", range: 75 },
+    { skill: "Javascript", range: 75 },
+    { skill: "NodeJS", range: 60 },
+    { skill: "React", range: 60 },
+    { skill: "MySql", range: 60 },
+    { skill: "AWS", range: 50 },
+    { skill: "Sql Lite", range: 50 },
+    { skill: "MongoDB", range: 50 },
+  ];
+
   return (
     <>
       <div id="skills-section">
+        <h1>Skills</h1>
         <div className="container-fluid">
           <div className="row">
             <table>
               <thead></thead>
               <tbody>
-                <tr>
-                  <td className="skill_name">HTML</td>
-                  <td className="skill_knowledge">
-                    <div
-                      className="progress"
-                      role="progressbar"
-                      aria-label="Basic example"
-                      aria-valuenow="25"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    >
+                {skillArr.map((skill, index) => (
+                  <tr key={index}>
+                    <td className="skill_name">{skill.skill}</td>
+                    <td className="skill_knowledge">
                       <div
-                        className="progress-bar"
-                        style={{ width: "25%" }}
-                      ></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>4</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>6</td>
-                </tr>
+                        className="progress"
+                        role="progressbar"
+                        aria-label={skill.skill}
+                        aria-valuenow={skill.range}
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div
+                          className="progress-bar"
+                          style={{ width: `${skill.range}%` }}
+                        ></div>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

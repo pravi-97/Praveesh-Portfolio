@@ -34,10 +34,8 @@
 
 .social:hover .fa-brands {
   transform: scale(1.5);
-  /* color: #ff0000; */
 }
 
 #social-links {
   transition: 0.5s;
-  /* visibility: hidden; */
 }

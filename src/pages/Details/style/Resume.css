@@ -34,7 +34,7 @@ p{
     margin-left: 2em;
 }
 
-/* professional-summary */
+/* .professional-summary */
 .emp-history,
 .edu-history,
 .cert-history,
@@ -58,14 +58,18 @@ p{
 #index-section{
     position: absolute;
     right: 0%;
-    /* transform: translateX(20%); */
 }
 
 #index-section a{
-    /* text-decoration: none; */
     color: black;
     padding-left: 5px;
     padding-right: 5px;
+}
+#index-section div{
+    opacity: 0.3;
+}
+#index-section div:hover{
+    opacity: 1;
 }
 #index-section > div:nth-child(even){
     background-color: #ff00004a;

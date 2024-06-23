@@ -13,7 +13,6 @@ const Projects = () => {
       .get(API_URL)
       .then((response) => {
         setProjectList(response.data.message);
-        console.log(response.data.message);
         setLoading(false);
       })
       .catch((error) => {
@@ -21,12 +20,16 @@ const Projects = () => {
         setLoading(false);
       });
   }, []);
+  if(error){
+    return <>An Error Occurred</>
+  }
   if (loading) {
     return <div>Loading</div>;
   }
   return (
     <>
       <div id="project-section">
+        <h1>Projects</h1>
         <div className="container-fluid">
           <div className="row table-start">
             {Array.isArray(projectList) && projectList.length > 0 ? (

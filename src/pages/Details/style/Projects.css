@@ -13,7 +13,7 @@
 .app_desc {
   vertical-align: top;
 }
-tr > td:nth-child(1) {
+.tables tr > td:nth-child(1) {
   padding-right: 10px;
   font-weight: bold;
 }

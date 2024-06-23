@@ -1,11 +1,12 @@
 #contact-section {
   height: 100vh;
-  /* background-color: black; */
   width: 100%;
   color: #000;
   position: relative;
 }
+
 .contact-container {
+  /* width: 100%; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -91,27 +92,23 @@ textarea {
 #form-submit-error p {
   font-size: 3.5vh;
 }
-#thank-you{
+#thank-you {
   text-align: center;
   color: white;
 }
 
-#thank-you > a{
+#thank-you > a {
   margin: 0 10px 0 10px;
   background-color: red;
   border: none;
 }
-#thank-you > a:hover{
+#thank-you > a:hover {
   background-color: white;
   color: #000;
   border: none;
 }
 
 @media (max-width: 991px) {
-  /*.container-fluid {
-    margin-bottom: 20%; 
-  }*/
-
   #contact-section {
     width: 100%;
     position: static;
@@ -132,5 +129,10 @@ textarea {
 @media (max-width: 991px) {
   .container-fluid {
     margin-bottom: 5%;
+  }
+}
+@media (max-width: 540px) {
+  .contact-container {
+    width: 100%;
   }
 }
