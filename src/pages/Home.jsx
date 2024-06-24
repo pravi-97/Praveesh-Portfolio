@@ -41,6 +41,7 @@ const Home = () => {
       document.getElementById("main-heading-2").style.opacity = "1";
       document.getElementById("about-section").style.display = "block";
       document.getElementById("contact-section").style.display = "block";
+      blinkHide();
     }, 100 * (text1.length + text2.length) + 2000);
     timeouts.push(timeout);
     return () => timeouts.forEach((timeout) => clearTimeout(timeout));

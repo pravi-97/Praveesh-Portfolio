@@ -63,6 +63,9 @@ const Contact = () => {
     }
   };
   const showForm = () => {
+    formData.name = "";
+    formData.email = "";
+    formData.message = "";
     setIsDoneSubmit(false);
   };
   function hideError() {
