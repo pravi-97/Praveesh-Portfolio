@@ -1,27 +1,6 @@
-import { useEffect } from "react";
 import "./styles/Social.css";
 const Social = () => {
-  function moveSocial() {
-    var socialLinks = document.getElementById("social-links");
-    socialLinks.style.transform = "translate(-50%, -50%) translateX(-40%)";
-  }
-  const displaySocial = () => {
-    if (window.innerWidth > 768) {
-      var socialLinks = document.getElementById("social-links");
-      socialLinks.style.transform = "translate(-50%, -50%) translateX(0%)";
-      setTimeout(moveSocial, 6000);
-      var social = document.getElementsByClassName("social");
-      for (var i = 0; i < social.length; i++) {
-        social[i].style.visibility = "visible";
-      }
-    }
-  };
-
-  useEffect(() => {
-    setTimeout(displaySocial, 2000);
-  }, []);
-
-  const socials = [
+    const socials = [
     {
       cName: "fa-brands fa-linkedin",
       link: "https://www.linkedin.com/in/praveesh-p",
