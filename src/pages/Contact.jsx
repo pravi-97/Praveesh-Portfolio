@@ -38,9 +38,6 @@ const Contact = () => {
       const requestOptions = {
         body: JSON.stringify(form),
       };
-      const headers = {
-        "Content-Type": "application/json",
-      };
       axios
         .post(
           "https://5wyigq88j2.execute-api.ap-south-1.amazonaws.com/prod",
@@ -79,7 +76,7 @@ const Contact = () => {
           <div id="thank-you">
             <h1>Thank You</h1>
             <p id="ty-message">
-              Your message has been sent. Thank you for writing. I'll get in
+              Your message has been sent. Thank you for writing. I&#39;ll get in
               touch with you shortly.
             </p>
             <a className="btn btn-primary" href="#home-section">
