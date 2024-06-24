@@ -4,9 +4,9 @@ import "./styles/Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "Praveesh",
-    email: "abc@mail.com",
-    message: "hi",
+    name: "",
+    email: "",
+    message: "",
   });
   const [ifFailed, setIfFailed] = useState(false);
   const [isSubmit, setisSubmit] = useState(false);
