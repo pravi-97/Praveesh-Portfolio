@@ -94,7 +94,8 @@ textarea {
 }
 #thank-you {
   text-align: center;
-  color: white;
+  color: white !important;
+  visibility: visible !important;
 }
 
 #thank-you > a {
