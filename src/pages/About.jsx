@@ -1,28 +1,20 @@
-import { useEffect, useState } from "react";
 import Details from "./Details";
 import praveesh from "../assets/images/praveesh.jpg";
 import "./styles/About.css";
 
 const About = () => {
-  const [type, setType] = useState("about");
   function getDetails(topic) {
-    setType(topic);
-    // window.location.href = "#about-section";
     if (topic == "about") {
       document.getElementById('first-section-text').style.visibility = "hidden";
     } else document.getElementById('first-section-text').style.visibility = "visible";
 
     if (topic == "about") {
-      // window.location.href = "#about-about-section";
       document.getElementById("button-about").click();
     } else if (topic == "resume") {
-      // window.location.href = "#resume-section";
       document.getElementById("button-resume").click();
     } else if (topic == "projects") {
-      // window.location.href = "#project-section";
       document.getElementById("button-projects").click();
     } else if (topic == "skills") {
-      // window.location.href = "#skills-section";
       document.getElementById("button-skills").click();
     } else document.getElementById("button-about").click();
   }
@@ -41,7 +33,7 @@ const About = () => {
                 />
               </div>
               <div id="first-section-text">
-                Hello, I'm Praveesh. I am a full-stack developer with over three
+                Hello, I&#39;m Praveesh. I am a full-stack developer with over three
                 years of experience working on enterprise applications as a Java
                 Developer at Infosys. In my free time, I have been learning
                 React and AWS. Currently, I work as a Software Engineer at

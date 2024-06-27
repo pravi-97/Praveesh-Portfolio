@@ -5,7 +5,7 @@ const Home = () => {
     const tooltipTriggerList = document.querySelectorAll(
       '[data-bs-toggle="tooltip"]'
     );
-    const tooltipList = [...tooltipTriggerList].map(
+    [...tooltipTriggerList].map(
       (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
     );
     const text1 = "Hello There! I'm ".split("");
@@ -28,6 +28,11 @@ const Home = () => {
       }, 100 * i + 100 * text1.length);
       timeouts.push(timeout);
     }
+    let timeout1 = setTimeout(() => {
+      blinkHide();
+    }, 100 * (text1.length + text2.length)+100);
+    timeouts.push(timeout1);
+
     let timeout = setTimeout(() => {
       document.getElementById("navbar-header").style.opacity = "1";
       document.getElementById("social-links").style.transform =
