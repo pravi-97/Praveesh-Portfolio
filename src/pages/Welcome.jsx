@@ -2,7 +2,7 @@ import './styles/Welcome.css'
 
 const Welcome = () => {
     return ( 
-        <section>
+        <section id='welcome-section'>
             Welcome
         </section>
      );

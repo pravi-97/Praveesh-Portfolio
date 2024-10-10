@@ -1,37 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import "./styles/CursorBubble.css";
+import AnimatedCursor from 'react-animated-cursor';
 
 const CursorBubble = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setPosition({ x: e.pageX, y: e.pageY });
-    };
-
-    const handleScroll = () => {
-      setPosition((prevPosition) => ({
-        x: prevPosition.x,
-        y: prevPosition.y,
-      }));
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('scroll', handleScroll);
-
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
-    <div
-      className="cursor-bubble"
-      style={{
-        transform: `translate(${position.x - 10}px, ${position.y - 10}px) scale(1.1, 0.9)`, // Slight scale to give the bubble effect
-      }}
-    />
+    <AnimatedCursor
+        innerSize={20}
+        outerSize={70}
+        color='255, 255, 255'
+        outerAlpha={0}
+        innerScale={0.6}
+        outerScale={1.5}
+        outerStyle={{
+          background: 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 80%)',
+          borderRadius: '50%',
+          // boxShadow: '0 0 60px rgba(255, 255, 255, 0.2)',
+          mixBlendMode: 'exclusion'
+        }}
+      />
   );
 };
 

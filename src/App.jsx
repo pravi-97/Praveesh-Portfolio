@@ -10,8 +10,8 @@ import "./App.css";
 function App() {
   return (
     <BrowserRouter>
-      {/* <CursorBubble /> */}
-      <Navbar />
+      <CursorBubble />
+      {/* <Navbar /> */}
       {/* <Social /> */}
       <Home />
       {/* <About /> */}
