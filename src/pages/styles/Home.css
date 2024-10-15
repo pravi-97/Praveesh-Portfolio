@@ -1,12 +1,40 @@
+/* Prevent the entire page from scrolling horizontally */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
 #home-section {
   height: 100vh;
+  position: relative;
+  overflow: hidden; /* Prevent overflow in the home section */
 }
+
 .container-fluid,
-.row,
-.col-md-2,
-.col-md-10 {
+.row {
   height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
+
+/* Adjusting panel styles */
+.home-left {
+  height: 100%;
+  background-color: black;
+  overflow: hidden; /* Ensure no overflow from left panel */
+  z-index: 1; /* Ensure left panel is on top during animation */
+  /* width: 100% !important; */
+}
+
+.home-right {
+  height: 100%;
+  background-color: white;
+  color: black;
+  z-index: 0; /* Ensure right panel is behind left panel during collapse */
+}
+
 .list-ul {
   list-style-type: none;
   padding: 0;
@@ -14,7 +42,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center !important;
   height: 100%;
+  
+  /* width: 100% !important; */
 }
 
 .list-ul li {
@@ -22,48 +53,21 @@
   padding: 10px 0px 10px 0px;
   text-align: end;
 }
+
 .list-ul li > * {
   text-decoration: none;
-  /* color: white; */
 }
 
 .nav_links {
   font-size: 2.5em;
+  color: white;
 }
 
-
-/* glow line starts */
-.glow-line {
-  width: 10px;
-  padding: 0;
-  margin: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.5),
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0.5)
-  );
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
-  animation: glow 1s infinite alternate;
-}
-
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-  }
-  100% {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 1);
-  }
-}
-/* glow line ends */
-
-.home-left,
-.nav_links{
-  background-color: white;
-}
-.nav_links{
-  color: black; 
-}
-.home-right{
-
+.go-back-button{
+  color: red;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  margin: 20px;
 }
