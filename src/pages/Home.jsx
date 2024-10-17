@@ -7,17 +7,19 @@ import Contact from "./Contact";
 import Resume from "./Resume";
 import Welcome from "./Welcome";
 import Intro from "./Intro.jsx";
+import Social from "../components/Social.jsx";
 
 const Home = () => {
   const [content, setContent] = useState(<Welcome />);
   const [showFullScreen, setShowFullScreen] = useState(false);
   const [isIntro, setIsIntro] = useState(true);
   const [exitComplete, setExitComplete] = useState(false);
+  const [contentKey, setContentKey] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
       setIsIntro(false);
-    }, 7000);
+    }, 1000);
   }, []);
 
   function handleExitComplete() {
@@ -27,6 +29,7 @@ const Home = () => {
   function displayFullScreenPage(component) {
     setShowFullScreen(true);
     setTimeout(() => {
+      setContentKey((prevKey) => prevKey + 1);
       setContent(component);
     }, 300);
   }
@@ -34,6 +37,7 @@ const Home = () => {
   function goBack() {
     setShowFullScreen(false);
     setTimeout(() => {
+      setContentKey((prevKey) => prevKey + 1);
       setContent(<Welcome />);
     }, 300);
   }
@@ -81,21 +85,21 @@ const Home = () => {
             <div className="container-fluid">
               <div className="row">
                 <motion.div
-                  className="home-left"
+                  className="home-left col-md-3"
                   animate={{ x: showFullScreen ? "-100%" : "0%" }}
                   initial={{ x: "0%" }}
                   transition={{ duration: 1 }}
                   style={{
-                    width: "25%",
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    bottom: 0,
+                    // width: "25%",
+                    // position: "absolute",
+                    // left: 0,
+                    // top: 0,
+                    // bottom: 0,
                   }}
                 >
                   <ul className="list-ul">
                     <li>
-                      <Link className="nav_links" href="#">
+                      <Link className="nav_links home-active"  href="#">
                         Home
                       </Link>
                     </li>
@@ -128,9 +132,9 @@ const Home = () => {
                     </li>
                   </ul>
                 </motion.div>
-
+                <Social />
                 <motion.div
-                  className="home-right"
+                  className="home-right col-md-9"
                   animate={{
                     width: showFullScreen ? "100%" : "85%",
                     x: showFullScreen ? "0%" : "15%",
@@ -139,19 +143,40 @@ const Home = () => {
                   transition={{ duration: 1 }}
                   style={{ position: "absolute", right: 0, top: 0, bottom: 0 }}
                 >
-                  {content}
+                  <AnimatePresence>
+                    <motion.div
+                      key={contentKey}
+                      initial={{ opacity: 0, x: 100 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{
+                        opacity: 0,
+                        x: -100,
+                        transition: { duration: 0.5 },
+                      }}
+                      transition={{ duration: 1 }}
+                      style={{
+                        // position: "absolute",
+                        // top: 0,
+                        // width: "100%",
+                        // height: "100%",
+                      }}
+                    >
+                      {content}
+                    </motion.div>
+                  </AnimatePresence>
                 </motion.div>
               </div>
             </div>
-
-            <button
-              className="go-back-button"
-              style={{ visibility: showFullScreen ? "visible" : "hidden" }}
+            <i
+              className="fa-regular fa-circle-xmark go-back-button"
               type="button"
               onClick={() => goBack()}
-            >
-              Go Back
-            </button>
+              style={{
+                color: "#000000",
+                opacity: showFullScreen ? "1" : "0",
+                pointerEvents: showFullScreen ? "auto" : "none",
+              }}
+            ></i>
           </motion.div>
         </AnimatePresence>
       )}

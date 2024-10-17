@@ -25,8 +25,9 @@ const Social = () => {
   return (
     <div>
       <section id="social-links">
+      <p>Socials</p>
         <div className="svg-btn text-center">
-          <ul>
+          <ul className="social-ul">
             {socials.map((social, index) => (
               <li className="social" key={index}>
                 <a href={social.link} target="_blank" rel="noopener noreferrer">
