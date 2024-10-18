@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./styles/Home.css";
 import { Link } from "react-router-dom";
@@ -15,6 +15,7 @@ const Home = () => {
   const [isIntro, setIsIntro] = useState(true);
   const [exitComplete, setExitComplete] = useState(false);
   const [contentKey, setContentKey] = useState(0);
+  const socialRef = useRef(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -31,6 +32,7 @@ const Home = () => {
     setTimeout(() => {
       setContentKey((prevKey) => prevKey + 1);
       setContent(component);
+      socialRef.current.style.opacity = 0;  
     }, 300);
   }
 
@@ -39,6 +41,7 @@ const Home = () => {
     setTimeout(() => {
       setContentKey((prevKey) => prevKey + 1);
       setContent(<Welcome />);
+      socialRef.current.style.opacity = 1; 
     }, 300);
   }
 
@@ -90,11 +93,11 @@ const Home = () => {
                   initial={{ x: "0%" }}
                   transition={{ duration: 1 }}
                   style={{
-                    // width: "25%",
-                    // position: "absolute",
-                    // left: 0,
-                    // top: 0,
-                    // bottom: 0,
+                    // width: "30%",
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
                   }}
                 >
                   <ul className="list-ul">
@@ -132,7 +135,7 @@ const Home = () => {
                     </li>
                   </ul>
                 </motion.div>
-                <Social />
+                <Social socialRef={socialRef} />
                 <motion.div
                   className="home-right col-md-9"
                   animate={{
@@ -155,10 +158,10 @@ const Home = () => {
                       }}
                       transition={{ duration: 1 }}
                       style={{
-                        // position: "absolute",
-                        // top: 0,
-                        // width: "100%",
-                        // height: "100%",
+                        position: "absolute",
+                        top: 0,
+                        width: "100%",
+                        height: "100%",
                       }}
                     >
                       {content}

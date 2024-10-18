@@ -3,9 +3,9 @@ import praveesh from "../assets/images/praveesh.jpg";
 
 const Welcome = () => {
   return (
-    <section id="welcome-section">
+    <section id="welcome-section" className="col-md-9">
       {/* <img src={praveesh} alt="Praveesh Image" /> */}
-      <div className="container-fluid">
+      <div className="container-fluid welcome">
         <div className="row">
           <div className="col-md-6">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, debitis neque. Nesciunt aut laborum eligendi laboriosam porro in sunt ut voluptates, et quidem iste, ipsa corrupti placeat quos quo neque saepe, delectus repellat. Odit eveniet sequi temporibus magnam et placeat commodi omnis natus, ab, quis qui nobis aspernatur tempora asperiores.</p>
@@ -14,6 +14,7 @@ const Welcome = () => {
           </div>
           <div className="col-md-6">
           <img id="praveesh-image" src={praveesh} alt="Praveesh Image" />
+          <p id="main-role">| FULL STACK DEVELOPER | AWS CERTIFIED CLOUD PRACTIONER</p>
           </div>
         </div>
       </div>

@@ -1,30 +1,31 @@
 /* Prevent the entire page from scrolling horizontally */
-html, body {
+/* html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Disable horizontal scrolling */
-}
+  overflow-x: hidden;
+} */
 
-#home-section {
+/* #home-section {
+  width: 100vw;
   height: 100vh;
   position: relative;
-  overflow: hidden; /* Prevent overflow in the home section */
-}
+  overflow: hidden; 
+} */
 
-.container-fluid,
+/* .container-fluid,
 .row {
   height: 100%;
   position: relative;
   margin: 0;
   padding: 0;
-}
+} */
 
 /* Adjusting panel styles */
 .home-left {
   height: 100%;
   background-color: black;
-  overflow: hidden; /* Ensure no overflow from left panel */
-  z-index: 1; /* Ensure left panel is on top during animation */
+  /* overflow: hidden; */
+  z-index: 1;
   /* width: 100% !important; */
 }
 
@@ -32,7 +33,7 @@ html, body {
   height: 100%;
   background-color: white;
   color: black;
-  z-index: 0; /* Ensure right panel is behind left panel during collapse */
+  z-index: 0;
 }
 
 .list-ul {
@@ -44,8 +45,6 @@ html, body {
   justify-content: center;
   text-align: center !important;
   height: 100%;
-  
-  /* width: 100% !important; */
 }
 
 .list-ul li {

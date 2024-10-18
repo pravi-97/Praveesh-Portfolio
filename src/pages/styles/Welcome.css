@@ -1,8 +1,19 @@
+#welcome-section{
+    width: 70vw;
+    overflow: hidden;
+}
+
+.container-fluid .welcome{
+    width: 100%;
+}
 #praveesh-image{
-    height: 25em;
-    width: 25em;
-    /* margin-top: 1em; */
+    /* height: 25em; */
+    width: 100% ;
     border-radius: 50%;
+}
+#main-role{
+    text-align: center;
+    /* overflow: scroll; */
 }
 
 #welcome-section{
