@@ -1,22 +1,40 @@
 #welcome-section{
-    width: 70vw;
-    overflow: hidden;
+    margin-top: 1em;
+    height: 100vh;
+    width: 83% !important;
 }
 
-.container-fluid .welcome{
-    width: 100%;
+.welcome-sec-1{
+    
+}
+.welcome-sec-2{
+    width: 50% !important;
+
 }
 #praveesh-image{
-    /* height: 25em; */
-    width: 100% ;
+    width: 100%;
     border-radius: 50%;
 }
 #main-role{
     text-align: center;
-    /* overflow: scroll; */
 }
 
-#welcome-section{
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
+.home-button {
+    margin: 0 15px 0 0;
+    background-color: #ff0000;
+    border: none;
+  }
+  .home-button,
+  .home-button i {
+    transition: 0.5s;
+  }
+  .home-button:hover {
+    background-color: rgb(0, 0, 0);
+    color: white !important;
+  }
+  .home-button:hover i {
+    color: white !important;
+  }
+  .home-button:active {
+    background-color: #ff0000 !important;
+  }

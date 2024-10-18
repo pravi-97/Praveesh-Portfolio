@@ -32,7 +32,7 @@ const Home = () => {
     setTimeout(() => {
       setContentKey((prevKey) => prevKey + 1);
       setContent(component);
-      socialRef.current.style.opacity = 0;  
+      socialRef.current.style.opacity = 0;
     }, 300);
   }
 
@@ -41,7 +41,7 @@ const Home = () => {
     setTimeout(() => {
       setContentKey((prevKey) => prevKey + 1);
       setContent(<Welcome />);
-      socialRef.current.style.opacity = 1; 
+      socialRef.current.style.opacity = 1;
     }, 300);
   }
 
@@ -67,7 +67,7 @@ const Home = () => {
             animate="animate"
             exit="exit"
             variants={introTransition}
-            style={{ width: "100%", height: "100vh" }}
+            // style={{ width: "100%", height: "100vh" }}
           >
             <Intro />
           </motion.div>
@@ -83,7 +83,7 @@ const Home = () => {
             exit="exit"
             variants={mainContentTransition}
             transition={{ duration: 0.5 }}
-            style={{ width: "100%", height: "100vh" }}
+            // style={{ width: "100%", height: "100vh" }}
           >
             <div className="container-fluid">
               <div className="row">
@@ -92,17 +92,17 @@ const Home = () => {
                   animate={{ x: showFullScreen ? "-100%" : "0%" }}
                   initial={{ x: "0%" }}
                   transition={{ duration: 1 }}
-                  style={{
-                    // width: "30%",
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    bottom: 0,
-                  }}
+                  // style={{
+                  //   width: "30%",
+                  //   position: "absolute",
+                  //   left: 0,
+                  //   top: 0,
+                  //   bottom: 0,
+                  // }}
                 >
                   <ul className="list-ul">
                     <li>
-                      <Link className="nav_links home-active"  href="#">
+                      <Link className="nav_links home-active" href="#">
                         Home
                       </Link>
                     </li>
