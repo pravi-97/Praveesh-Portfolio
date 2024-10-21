@@ -1,0 +1,141 @@
+#contact-section {
+    height: 100vh;
+    width: 100%;
+    color: #fff;
+    position: relative;
+  }
+  
+  .contact-container {
+    /* width: 100%; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #000;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form {
+    display: grid;
+    gap: 10px;
+  }
+  
+  .form-group {
+    display: grid;
+    gap: 5px;
+  }
+  #form-submit-error {
+    color: #fff;
+  }
+  label {
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #000;
+    border-radius: 3px;
+  }
+  
+  input,
+  textarea {
+    text-align: start;
+  }
+  
+  .submit-button,
+  .submit-button-disabled {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    box-shadow: inset 0 0 0 3px black;
+  }
+  
+  .submit-button-disabled {
+    background-color: #fff;
+    cursor: auto;
+    color: #000;
+  }
+  
+  #error-alert {
+    text-align: center;
+    visibility: hidden;
+    color: red;
+    transition: 1s;
+  }
+  #form-submit-error p {
+    text-align: center;
+    color: #000;
+  }
+  #form-submit-error {
+    visibility: hidden;
+    transition: 1s;
+  }
+  #form-submit-error p {
+    font-size: 3.5vh;
+  }
+  #thank-you {
+    text-align: center;
+    color: black;
+    visibility: visible !important;
+  }
+  
+  #thank-you > a {
+    margin: 0 10px 0 10px;
+    background-color: red;
+    border: none;
+    margin-top: 5px;
+  }
+  #thank-you > a:hover {
+    background-color: black;
+    color: #fff;
+    border: none;
+  }
+  
+  @media (max-width: 991px) {
+    #contact-section {
+      width: 100%;
+      position: static;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+    }
+  
+    #form-submit-error {
+      margin: 0px 50px 0px 50px;
+    }
+  
+    #form-submit-error p {
+      font-size: smaller !important;
+      margin-bottom: 0;
+    }
+  }
+  @media (max-width: 991px) {
+    .container-fluid {
+      margin-bottom: 5%;
+    }
+  }
+  @media (max-width: 540px) {
+    .contact-container {
+      width: 100%;
+    }
+  }
