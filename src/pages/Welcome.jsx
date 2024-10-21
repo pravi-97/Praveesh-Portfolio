@@ -1,9 +1,21 @@
 import "./styles/Welcome.css";
 import praveesh from "../assets/images/praveesh.jpg";
+import project from "../assets/images/expense-project.png";
+import { useState } from "react";
+import Projects from "./Projects.jsx";
 
 const Welcome = () => {
+  // const [projects, setProjects] = useState(false);
+  function openProjects() {
+    // setProjects(true);
+    document.getElementById("welcome-project-section").style.visibility = "visible";
+  }
+
   return (
     <section id="welcome-section">
+      <div id="welcome-project-section">
+        <Projects />
+      </div>
       <div className="container-fluid welcome">
         <div className="row">
           <div className="col-md-6 welcome-sec-1">
@@ -42,15 +54,19 @@ const Welcome = () => {
             <div className="featured-projects">
               <h2>Featured Projects</h2>
               <div className="project-card">
-                <img src="project1-thumbnail.jpg" alt="Project 1" />
-                <p>Project Title</p>
-                <button
-                  className="btn btn-primary home-button"
-                  onClick={() => navigateTo("project-details")}
-                >
-                  View More
-                </button>
+                <p>Expenses</p>
+                <img
+                  src={project}
+                  className="img-thumbnail"
+                  alt="Expense Home Screen"
+                />
               </div>
+              <button
+                className="btn btn-primary home-button"
+                onClick={() => openProjects()}
+              >
+                View More Projects
+              </button>
             </div>
           </div>
           <div className="col-md-6 welcome-sec-2">
