@@ -1,0 +1,14 @@
+#about-about-section{
+    margin: 2em;
+}
+#about-about-section h1{
+    font-size: 3.3em;
+    text-align: center;
+    text-decoration: underline #ff0000 3px;
+}
+
+#about-about-section p{
+    font-size: 1.3em;
+    margin-bottom: 1.1em;
+    text-indent: 2em
+}
