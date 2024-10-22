@@ -5,16 +5,16 @@ import { useState } from "react";
 import Projects from "./Projects.jsx";
 
 const Welcome = () => {
-  // const [projects, setProjects] = useState(false);
+  const [projects, setProjects] = useState(false);
   function openProjects() {
-    // setProjects(true);
+    setProjects(true);
     document.getElementById("welcome-project-section").style.visibility = "visible";
   }
 
   return (
     <section id="welcome-section">
       <div id="welcome-project-section">
-        <Projects />
+        <Projects projects = {projects} />
       </div>
       <div className="container-fluid welcome">
         <div className="row">
