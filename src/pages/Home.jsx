@@ -20,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsIntro(false);
-    }, 1000);
+    }, 6000);
   }, []);
 
   function handleExitComplete() {
