@@ -1,104 +1,188 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "./styles/Home.css";
+import { Link } from "react-router-dom";
+import About from "./About";
+import Contact from "./Contact";
+import Resume from "./Resume";
+import Welcome from "./Welcome";
+import Intro from "./Intro.jsx";
+import Social from "../components/Social.jsx";
+
 const Home = () => {
+  const [content, setContent] = useState(<Welcome />);
+  const [showFullScreen, setShowFullScreen] = useState(false);
+  const [isIntro, setIsIntro] = useState(true);
+  const [exitComplete, setExitComplete] = useState(false);
+  const [contentKey, setContentKey] = useState(0);
+  const socialRef = useRef(null);
+
   useEffect(() => {
-    const tooltipTriggerList = document.querySelectorAll(
-      '[data-bs-toggle="tooltip"]'
-    );
-    [...tooltipTriggerList].map(
-      (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-    );
-    const text1 = "Hello There! I'm ".split("");
-    document.getElementById("paint-it-white").textContent = "";
-    let timeouts = [];
-    for (let i = 0; i < text1.length; i++) {
-      let timeout = setTimeout(() => {
-        let val = document.getElementById("paint-it-white").textContent;
-        document.getElementById("paint-it-white").textContent = val + text1[i];
-      }, 100 * i);
-      timeouts.push(timeout);
-    }
-
-    const text2 = "Praveesh.".split("");
-    document.getElementById("paint-it-red").textContent = "";
-    for (let i = 0; i < text2.length; i++) {
-      let timeout = setTimeout(() => {
-        let val = document.getElementById("paint-it-red").textContent;
-        document.getElementById("paint-it-red").textContent = val + text2[i];
-      }, 100 * i + 100 * text1.length);
-      timeouts.push(timeout);
-    }
-    let timeout1 = setTimeout(() => {
-      blinkHide();
-    }, 100 * (text1.length + text2.length)+100);
-    timeouts.push(timeout1);
-
-    let timeout = setTimeout(() => {
-      document.getElementById("navbar-header").style.opacity = "1";
-      document.getElementById("social-links").style.transform =
-        "translate(-50%, -50%)";
-      document.getElementById("main-heading-2").style.visibility = "visible";
-      document.getElementById("main-heading-2").style.opacity = "1";
-      document.getElementById("about-section").style.display = "block";
-      document.getElementById("contact-section").style.display = "block";
-      blinkHide();
-    }, 100 * (text1.length + text2.length) + 2000);
-    timeouts.push(timeout);
-    return () => timeouts.forEach((timeout) => clearTimeout(timeout));
-  }, []);
-  function blinkHide() {
-    const blink = document.getElementById("blink_it");
-    blink.style.visibility = "hidden";
     setTimeout(() => {
-      blinkShow();
+      setIsIntro(false);
+    }, 6000);
+  }, []);
+
+  function handleExitComplete() {
+    setExitComplete(true);
+  }
+
+  function displayFullScreenPage(component) {
+    setShowFullScreen(true);
+    setTimeout(() => {
+      setContentKey((prevKey) => prevKey + 1);
+      setContent(component);
+      socialRef.current.style.opacity = 0;
     }, 300);
   }
-  function blinkShow() {
-    const blink = document.getElementById("blink_it");
-    blink.style.visibility = "visible";
+
+  function goBack() {
+    setShowFullScreen(false);
     setTimeout(() => {
-      blinkHide();
-    }, 700);
+      setContentKey((prevKey) => prevKey + 1);
+      setContent(<Welcome />);
+      socialRef.current.style.opacity = 1;
+    }, 300);
   }
+
+  const mainContentTransition = {
+    initial: { opacity: 0, y: 50 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 50, transition: { duration: 2 } },
+  };
+
+  const introTransition = {
+    initial: { opacity: 1, scale: 1 },
+    animate: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 0.8, transition: { duration: 2 } },
+  };
+
   return (
     <section id="home-section">
-      <div className="container" id="home-container">
-        <div className="row">
-          <div className="col-md-12">
-            <div id="main-content">
-              <p id="main-heading">
-                <span id="paint-it-white"></span>
-                <span id="paint-it-red"></span>
-                <span id="blink_it">_</span>
-              </p>
-              <div id="main-heading-2">
-                <p id="main-role">| FULL STACK DEVELOPER |</p>
-                <a
-                  className="btn btn-primary home-button"
-                  href="https://praveesh-resume.s3.ap-south-1.amazonaws.com/Praveesh_Resume.docx"
-                  type="button"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="bottom"
-                  data-bs-title="Click to download Resume"
+      <AnimatePresence onExitComplete={handleExitComplete}>
+        {isIntro && (
+          <motion.div
+            key="intro"
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={introTransition}
+            // style={{ width: "100%", height: "100vh" }}
+          >
+            <Intro />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {exitComplete && (
+        <AnimatePresence>
+          <motion.div
+            key="main-content"
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={mainContentTransition}
+            transition={{ duration: 0.5 }}
+            // style={{ width: "100%", height: "100vh" }}
+          >
+            <div className="container-fluid">
+              <div className="row">
+                <motion.div
+                  className="home-left col-md-3"
+                  animate={{ x: showFullScreen ? "-100%" : "0%" }}
+                  initial={{ x: "0%" }}
+                  transition={{ duration: 1 }}
+                  // style={{
+                  //   width: "30%",
+                  //   position: "absolute",
+                  //   left: 0,
+                  //   top: 0,
+                  //   bottom: 0,
+                  // }}
                 >
-                  Resume{" "}
-                  <i
-                    className="fa-solid fa-download"
-                    style={{ color: "#ffffff" }}
-                  ></i>
-                </a>
-                <a
-                  className="btn btn-primary home-button"
-                  href="#about-section"
-                  type="button"
+                  <ul className="list-ul">
+                    <li>
+                      <Link className="nav_links home-active" href="#">
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="nav_links"
+                        href="#"
+                        onClick={() => displayFullScreenPage(<About />)}
+                      >
+                        About
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="nav_links"
+                        href="#"
+                        onClick={() => displayFullScreenPage(<Resume />)}
+                      >
+                        Resume
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="nav_links"
+                        href="#"
+                        onClick={() => displayFullScreenPage(<Contact />)}
+                      >
+                        Contact
+                      </Link>
+                    </li>
+                  </ul>
+                </motion.div>
+                <Social socialRef={socialRef} />
+                <motion.div
+                  className="home-right col-md-9"
+                  animate={{
+                    width: showFullScreen ? "100%" : "85%",
+                    x: showFullScreen ? "0%" : "15%",
+                  }}
+                  initial={{ width: "85%", x: "15%" }}
+                  transition={{ duration: 1 }}
+                  style={{ position: "absolute", right: 0, top: 0, bottom: 0 }}
                 >
-                  About
-                </a>
+                  <AnimatePresence>
+                    <motion.div
+                      key={contentKey}
+                      initial={{ opacity: 0, x: 100 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{
+                        opacity: 0,
+                        x: -100,
+                        transition: { duration: 0.5 },
+                      }}
+                      transition={{ duration: 1 }}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    >
+                      {content}
+                    </motion.div>
+                  </AnimatePresence>
+                </motion.div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+            <i
+              className="fa-regular fa-circle-xmark go-back-button"
+              type="button"
+              onClick={() => goBack()}
+              style={{
+                color: "#000000",
+                opacity: showFullScreen ? "1" : "0",
+                pointerEvents: showFullScreen ? "auto" : "none",
+              }}
+            ></i>
+          </motion.div>
+        </AnimatePresence>
+      )}
     </section>
   );
 };

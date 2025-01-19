@@ -1,8 +1,0 @@
-#navbar-header{
-    transition: 1s;
-    opacity: 0;
-}
-#about-section,
-#contact-section{
-    display: none;
-}

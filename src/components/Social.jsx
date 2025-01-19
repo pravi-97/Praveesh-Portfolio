@@ -1,5 +1,5 @@
 import "./styles/Social.css";
-const Social = () => {
+const Social = ({ socialRef }) => {
     const socials = [
     {
       cName: "fa-brands fa-linkedin",
@@ -24,9 +24,10 @@ const Social = () => {
   ];
   return (
     <div>
-      <section id="social-links">
+      <section id="social-links" ref={socialRef}>
+      <p>Socials</p>
         <div className="svg-btn text-center">
-          <ul>
+          <ul className="social-ul">
             {socials.map((social, index) => (
               <li className="social" key={index}>
                 <a href={social.link} target="_blank" rel="noopener noreferrer">

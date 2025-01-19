@@ -82,9 +82,6 @@ const Contact = () => {
               Your message has been sent. Thank you for writing. I&#39;ll get in
               touch with you shortly.
             </p>
-            <a className="btn btn-primary" href="#home-section">
-              Go To Top
-            </a>
             <a className="btn btn-primary" onClick={showForm}>
               Send Another Message
             </a>
