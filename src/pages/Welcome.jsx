@@ -26,7 +26,7 @@ const Welcome = () => {
               <p>| Full Stack Developer | AWS Certified Cloud Practitioner |</p>
               <a
                 className="btn btn-primary home-button"
-                href="https://praveesh-resume.s3.ap-south-1.amazonaws.com/Praveesh_Resume.docx"
+                href="https://praveesh-resume.s3.ap-south-1.amazonaws.com/Praveesh_Resume_v3.pdf"
                 type="button"
                 data-bs-toggle="tooltip"
                 data-bs-placement="bottom"
@@ -65,7 +65,7 @@ const Welcome = () => {
                 className="btn btn-primary home-button"
                 onClick={() => openProjects()}
               >
-                View More Projects
+                View More
               </button>
             </div>
           </div>
@@ -73,7 +73,7 @@ const Welcome = () => {
             <img
               id="praveesh-image"
               className="img-fluid"
-              // src={praveesh}
+              src={praveesh}
               alt="Praveesh Image"
             />
           </div>
